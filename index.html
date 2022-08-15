@@ -1,0 +1,119 @@
+<html>
+
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(43, 43, 43);
+        }
+
+        .clock {
+            position: absolute;
+            height: 300px;
+            width: 300px;
+            border-radius: 150px;
+            border: solid 5px yellow;
+        }
+
+        #seconds-hand {
+            position: absolute;
+            height: 130px;
+            width: 2px;
+            background-color: blue;
+            left: 149px;
+            bottom: 149px;
+            transform-origin: 0 100%;
+        }
+
+        #minutes-hand {
+            position: absolute;
+            height: 100px;
+            width: 5px;
+            background-color: red;
+            left: 149px;
+            bottom: 149px;
+            transform-origin: 0 100%;
+        }
+
+        #hours-hand {
+            position: absolute;
+            height: 80px;
+            width: 7px;
+            background-color: greenyellow;
+            left: 148px;
+            bottom: 148px;
+            transform-origin: 0 100%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="clock">
+        <div id="seconds-hand"></div>
+        <div id="minutes-hand"></div>
+        <div id="hours-hand"></div>
+        <div id="center"></div>
+    </div>
+    <script>
+        const secondsHand = document.getElementById('seconds-hand')
+        const minutesHand = document.getElementById('minutes-hand')
+        const hoursHand = document.getElementById('hours-hand')
+
+        function getTime() 
+        {
+            const now = new Date()
+            const seconds = now.getSeconds()
+            const minutes = now.getMinutes()
+            const hours = now.getHours()
+            const timeInterval = 6
+
+            secondsHand.style.transform = 'rotate('+ (seconds * timeInterval) +'deg)'
+            minutesHand.style.transform = 'rotate('+ (minutes * timeInterval) +'deg)'
+            hoursHand.style.transform = 'rotate('+ (hours * 30 + minutes / 2) +'deg)'
+
+            return {
+                hours: hours,
+                minutes: minutes,
+                seconds: seconds
+            }
+        }
+
+        setInterval(getTime, 1000)
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
