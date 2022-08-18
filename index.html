@@ -75,12 +75,6 @@
             secondsHand.style.transform = 'rotate('+ (seconds * timeInterval) +'deg)'
             minutesHand.style.transform = 'rotate('+ (minutes * timeInterval) +'deg)'
             hoursHand.style.transform = 'rotate('+ (hours * 30 + minutes / 2) +'deg)'
-
-            return {
-                hours: hours,
-                minutes: minutes,
-                seconds: seconds
-            }
         }
 
         setInterval(getTime, 1000)
