@@ -47,6 +47,10 @@
             bottom: 148px;
             transform-origin: 0 100%;
         }
+        
+        a {
+            color: white;
+        }
     </style>
     <title>Document</title>
 </head>
@@ -76,8 +80,8 @@
             minutesHand.style.transform = 'rotate('+ (minutes * timeInterval) +'deg)'
             hoursHand.style.transform = 'rotate('+ (hours * 30 + minutes / 2) +'deg)'
         }
-
-        setInterval(getTime, 1000)
+        getTime()
+        setInterval(getTime, 100)
     </script>
 </body>
 
